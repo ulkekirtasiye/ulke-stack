@@ -1,0 +1,32 @@
+name: Release Validation
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  validate-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify required files
+        run: |
+          test -f README.md
+          test -f LICENSE
+          test -f CLAUDE.md
+
+      - name: Verify directories
+        run: |
+          test -d agents
+          test -d docs
+          test -d prompts
+          test -d templates
+
+      - name: Release validation passed
+        run: |
+          echo "✅ Release validation successful."
