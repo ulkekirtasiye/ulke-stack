@@ -64,6 +64,21 @@ Mevcut davranışı değiştiren, veri kaybı riski taşıyan veya dış sisteml
 - Yeni özellik, önemli mimari kararı veya operasyonel gereksinim için yeterli dokümantasyon ekle.
 - Başkasının mevcut değişikliklerini izinsiz silme, geri alma veya yeniden biçimlendirme.
 
+## Dosya Organizasyonu ve Teslim Kriteri
+
+- Her dosya açık bir sorumluluğa sahip olmalı; kaynak kod, test, yapılandırma ve dokümantasyon birbirinden ayrılmalıdır.
+- Yeni dosya veya klasör, mevcut proje düzeniyle tutarlı bir konumda oluşturulmalı; geçici çıktılar, yerel veri ve gizli bilgiler sürüm kontrolüne eklenmemelidir.
+- Paket veya modül yapısını yalnızca ihtiyaç varsa değiştir; genel amaçlı "utils" dosyaları yerine alanı ifade eden modüller kullan.
+- Bir işin tamamlanmış sayılması için kabul kriterleri karşılanmalı, uygun testler veya eşdeğer doğrulama çalışmalı ve etkilenen dokümantasyon güncellenmelidir.
+- Test çalıştırılamıyorsa sebebini, riski ve uygulanan alternatif doğrulamayı teslim notunda açıkça bildir.
+
+## Commit Kuralları
+
+- Commit başlığı en fazla 72 karakter, Türkçe, emir kipinde ve tek bir değişikliği anlatacak şekilde yazılır.
+- Başlıkta uygun olduğunda tür belirtilir: `docs:`, `test:`, `fix:`, `feat:` veya `chore:`.
+- Commit; gereksiz biçim değişikliği, sır, derlenmiş çıktı veya ilgisiz dosya içermemelidir.
+- Kırıcı değişikliklerde geçiş notu, veri etkisi ve geri alma yaklaşımı commit veya ilgili dokümantasyonda belirtilmelidir.
+
 ## Öncelik Sırası
 
 Kararlar alınırken aşağıdaki sıra gözetilir:

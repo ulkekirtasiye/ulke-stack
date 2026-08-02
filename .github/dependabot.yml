@@ -8,19 +8,3 @@ updates:
       day: "monday"
       time: "09:00"
       timezone: "Europe/Istanbul"
-
-  - package-ecosystem: "pip"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:15"
-      timezone: "Europe/Istanbul"
-
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:30"
-      timezone: "Europe/Istanbul"

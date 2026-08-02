@@ -27,6 +27,13 @@ Bu dosya, ULKE STACK'te kullanıcıları, proje uygulayıcılarını veya bakım
 
 - Değişiklikler yayıma hazır olduğunda buraya eklenir.
 
+### Değiştirildi
+
+- README, hızlı başlangıç, agent, prompt, workflow ve şablon kullanımını açıklayan üretim odaklı bir yapıya getirildi.
+- `CLAUDE.md` dosyasına dosya organizasyonu, teslim kriterleri ve commit kuralları eklendi.
+- Python agent'ına kanıta dayalı hata giderme yöntemi eklendi.
+- Dependabot yalnızca bu depoda mevcut olan GitHub Actions ekosistemi için çalışacak şekilde sınırlandırıldı.
+
 ## [0.1.0] - 2026-07-18
 
 ### Eklendi

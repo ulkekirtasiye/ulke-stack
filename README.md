@@ -1,120 +1,84 @@
-# ULKE STACK
+# ULKE Stack
 
-ULKE STACK, Ülke Kitap Kırtasiye projeleri için hazırlanmış tekrar kullanılabilir yapay zekâ geliştirme (AI Development Stack) deposudur.
+ULKE Stack, Ülke Kitap Kırtasiye projeleri için tekrar kullanılabilir, yapay zekâ destekli geliştirme standartları, rol tanımları ve şablonlar sunan bir depo yapısıdır. Python, web, Cloudflare ve işletme araçları projelerinde tutarlı kalite, güvenlik ve teslimat alışkanlıkları oluşturmayı amaçlar.
 
-Amaç; Python uygulamaları, Cloudflare projeleri, web uygulamaları ve iş yönetim sistemlerinde aynı kalite standartlarını koruyan ortak bir çalışma altyapısı sağlamaktır.
+## Nedir?
 
----
+Bu depo bir uygulama ya da kütüphane değildir. Yeni projelerde kullanılacak ortak geliştirme sözleşmesidir: nasıl planlama yapılacağını, hangi kalite kontrollerinin beklendiğini ve uzman rollerin nasıl çalışacağını tanımlar.
 
-# Amaç
+## Özellikler
 
-Bu depo aşağıdaki hedefler için oluşturulmuştur:
+- Ortak kod, test, güvenlik ve dokümantasyon kuralları
+- Uzman görevleri için uygulanabilir agent tanımları
+- Özellik, hata düzeltme, refactor ve inceleme için hazır promptlar
+- Python, web ve masaüstü projeleri için başlangıç şablonları
+- Sürüm, değişiklik günlüğü ve yayın kontrol listeleri
+- Markdown, bağlantı ve yayın doğrulaması için GitHub Actions
 
-- Tekrarlanabilir proje başlangıçları
-- Standart geliştirme süreçleri
-- AI Agent tabanlı görev dağılımı
-- Kaliteli dokümantasyon
-- Test odaklı geliştirme
-- Güvenli yayın süreçleri
-- Kurumsal kod inceleme standartları
+## Klasör Yapısı
 
----
-
-# Dizin Yapısı
-
-```
-agents/
-docs/
-prompts/
-templates/
-
-CLAUDE.md
-README.md
-LICENSE
+```text
+agents/       Uzman rol tanımları
+docs/         Standartlar, yol haritası ve değişiklik günlüğü
+prompts/      Tekrarlanan geliştirme işleri için istemler
+templates/    Proje ve süreç şablonları
+.github/      GitHub Actions, issue şablonları ve Dependabot ayarları
+CLAUDE.md     İnsan ve yapay zekâ destekli geliştirme kuralları
 ```
 
----
+## Hızlı Başlangıç
 
-# Agents
+1. Depoyu klonlayın ve hedef projenizin türüne uygun şablonu `templates/` altında inceleyin.
+2. Proje köküne `CLAUDE.md` kurallarını ve gerekli şablonları uyarlayın.
+3. Yeni işi `prompts/new-feature.md` veya uygun süreç şablonuyla tanımlayın.
+4. İlgili agent rolünü kullanarak geliştirmeyi, testleri ve incelemeyi tamamlayın.
+5. Yayından önce `templates/release-checklist.md` listesini uygulayın ve `docs/CHANGELOG.md` dosyasını güncelleyin.
 
-`agents/` klasörü uzman rolleri içerir.
+## Kurulum
 
-- architect
-- cloudflare
-- database
-- designer
-- devops
-- project-manager
-- python
-- reviewer
-- seo
-- testing
+ULKE Stack için paket kurulumu gerekmez. Bu depoyu referans olarak kullanabilir veya içerikleri yeni projenize kopyalayabilirsiniz.
 
----
+```bash
+git clone https://github.com/ulkekirtasiye/ulke-stack.git
+cd ulke-stack
+```
 
-# Docs
+Şablonların her biri, hedef projede gereken bağımlılıkları ve başlangıç adımlarını kendi içinde açıklar.
 
-`docs/`
+## Agent Sistemi
 
-- ROADMAP
-- CHANGELOG
-- STANDARDS
+`agents/` klasöründeki her dosya, uzman bir rolün çalışma sınırlarını belirler. Roller; sorumluluk alanı, çalışma biçimi, kalite kontrolleri ve teslim biçimini içerir.
 
----
+Başlangıç için Python geliştirme işlerinde `agents/python.md` dosyasını kullanın. Mimari kararlar, test, güvenlik, DevOps ve diğer uzmanlık alanları için uygun rol dosyasına başvurun. Agent'lar, `CLAUDE.md` içindeki ortak kuralları tamamlar; onun yerine geçmez.
 
-# Prompts
+## Prompt Sistemi
 
-Hazır AI istemleri:
+`prompts/` klasörü, işi net ve incelenebilir girdilerle başlatmak için tasarlanmıştır:
 
-- new-feature
-- bug-fix
-- refactor
-- code-review
+- `new-feature.md`: Yeni yetenekler ve kabul kriterleri
+- `bug-fix.md`: Hatanın tekrarı, kök neden ve regresyon testi
+- `refactor.md`: Davranışı koruyan yapısal iyileştirmeler
+- `code-review.md`: Risk, kalite ve güvenlik odaklı inceleme
 
----
+## Workflow'lar
 
-# Templates
+GitHub Actions, ana dala yapılan gönderimleri ve pull request'leri aşağıdaki kontrollerle doğrular:
 
-Proje şablonları:
+- **Markdown Lint:** Markdown biçim kurallarını denetler.
+- **Link Checker:** Markdown dosyalarındaki bağlantıları denetler.
+- **Release Validation:** `v*` etiketi ya da elle çalıştırma ile yayın için gerekli dosya ve klasörleri doğrular.
+- **Dependabot:** GitHub Actions bağımlılıklarını haftalık olarak günceller.
 
-- feature-spec
-- bug-report
-- architecture-decision-record
-- test-plan
-- release-checklist
-- desktop-project
-- python-project
-- web-project
-- issue-template
-- pr-template
+Workflow sonuçları GitHub deposunun Actions sekmesinden izlenmelidir. Yayın doğrulaması yalnızca etiket veya elle tetikleme ile çalıştığından, bir sürüm kesmeden önce ayrıca başlatılmalıdır.
 
----
+## Proje Şablonları
 
-# Çalışma Akışı
+`templates/` altında özellik tanımı, hata bildirimi, mimari karar kaydı, test planı, yayın kontrol listesi ve proje başlangıç şablonları bulunur. Şablonlar gereksinim, risk, kabul kriteri, test kanıtı ve geri alma bilgisini aynı formatta toplamayı hedefler.
 
-1. Gereksinimleri belirle
-2. Feature Specification oluştur
-3. Gerekirse ADR hazırla
-4. Geliştirmeyi gerçekleştir
-5. Test Planı uygula
-6. Code Review yap
-7. Release Checklist tamamla
-8. CHANGELOG güncelle
-9. Yayınla
+## Roadmap
 
----
+Yol haritası [docs/ROADMAP.md](docs/ROADMAP.md) dosyasında yer alır. Öncelik sırası; veri güvenliği, mevcut projelere etkisi, tekrar eden işlerin standardizasyonu ve ölçülebilir kalite kazanımıdır. Stack, önce gerçek projelerde doğrulanacak; ardından gözlenen eksikler kalıcı iyileştirmelere dönüştürülecektir.
 
-# Standartlar
+## Lisans
 
-Tüm projeler:
-
-- CLAUDE.md
-- docs/STANDARDS.md
-
-kurallarına uymalıdır.
-
----
-
-# Lisans
-
-Bu depo MIT License altında lisanslanmıştır.
+Bu proje [MIT License](LICENSE) ile lisanslanmıştır.

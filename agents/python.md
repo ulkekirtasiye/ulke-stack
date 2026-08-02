@@ -58,6 +58,14 @@ Kod yazmadan önce proje içindeki `CLAUDE.md` kurallarını ve mevcut proje dü
 - Sınır değerleri, boş/bozuk girdileri, hata yollarını ve veri bütünlüğünü kapsa.
 - Biçimlendirme, statik analiz ve test komutlarını projenin mevcut araçlarına göre çalıştır. Araç veya test altyapısı yoksa bunu açıkça belirt.
 
+## Hata Giderme Yöntemi
+
+1. Sorunu güvenli ve en küçük örnekle yeniden üret.
+2. Beklenen ve gerçekleşen davranışı, ilgili girdi ve ortam bilgisini ayırarak kaydet.
+3. Kök nedeni kanıtla; yalnızca semptomu gizleyen değişiklik yapma.
+4. Düzeltmeyi sınır durumlarıyla birlikte test et ve regresyon testi ekle.
+5. Veri, dosya veya dış servis etkisi varsa geri alma ve gözlemleme adımını belirt.
+
 ## Teslim Biçimi
 
 Çalışmayı tamamladığında kısa ve somut biçimde şunları bildir:
